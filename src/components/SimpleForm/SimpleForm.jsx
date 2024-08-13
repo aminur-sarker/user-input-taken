@@ -8,25 +8,34 @@ const SimpleForm = () => {
 
     const handleSubmit = e =>{
         e.preventDefault();
+
         if(password.length<6){
             setError('Password must be 6 character or longer')
         }else{
             setError('')
         }
+
+        // we can gain input element by 2 types(use any one)
+        // e.target.[input field name].value
+        // or we can create handle event like 2nd console and need to use event 
+        // another option that use in RefForm page. should follow the page for further
+
         console.log(e.target.name.value) 
         console.log(name,email, password) 
     }
 
     const handleNameChange= e =>{
+        e.preventDefault()
         setName(e.target.value)
     }
 
     const handleEmailChange= e =>{
+        e.preventDefault()
         setEmail(e.target.value)
     }
 
     const handlePasswordChange= e =>{
-        if(password.length<6)
+        e.preventDefault()
         setPassword(e.target.value)
     }
 
